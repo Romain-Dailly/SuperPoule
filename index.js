@@ -18,8 +18,8 @@ console.log(characters)
 const listOfCharacters = document.getElementById("showCharacters")
 for (let i = 0; i < characters.length; i++) {
   listOfCharacters.innerHTML += 
-  `<div class="${i}" style="">
-      <div>
+  `<div class="${i}" style="height:200px">
+      <div style="height:150px;width:120px">
         <img style="max-height:100px; max-width:100px"src="${characters[i].image}">
         <p>${characters[i].name}</p>
       </div>
