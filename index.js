@@ -18,7 +18,6 @@ fetch("http://easteregg.wildcodeschool.fr/api/characters")
 
 /*Display characters in characters div*/
 const img = () =>{
-// console.log(characters)
 const listOfCharacters = document.getElementById("showCharacters")
 for (let i = 0; i < 6; i++) {
   listOfCharacters.innerHTML += 
@@ -46,8 +45,10 @@ function GetRandomCharacter() {
       <div class="card-body">
         <p class="card-text">${characterName}</p>
         <p class="card-text">${pseudo}</p>
-      </div>
-    </div>`  
+        <button>PLAY</button>
+      </div>    
+    </div>
+    `  
   })     
 }
 
