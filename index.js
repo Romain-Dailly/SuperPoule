@@ -18,12 +18,13 @@ console.log(characters)
 const listOfCharacters = document.getElementById("showCharacters")
 for (let i = 0; i < 6; i++) {
   listOfCharacters.innerHTML += 
-  `<div class="${i} h-5">
-        <a hover="cursor:pointer"><img class="img-fluid col-2"
-        style="max-height:100px; max-width:100px"src="${characters[i].image}">
-        </a>
-        <p>${characters[i].name}</p>
-  </div>`;
+  `<a hover="cursor:pointer">
+    <div class="card mr-2" style="width: 7rem;">
+      <img class="card-img-top img-fluid"src="${characters[i].image}">     
+      <div class="card-body">
+      <p class="card-text">${characters[i].name}</p>
+      </div>
+  </div></a>`;
   };
 }
 
@@ -43,7 +44,13 @@ function GetRandomCharacter() {
   .then(response => {
     characterName = response.name;
     characterImage = response.image;
-    document.getElementById('character').innerHTML = `<img src="${characterImage}"/></br>${characterName}`;     
+    document.getElementById('character').innerHTML = `
+    <div class="card mr-2" style="width: 10rem;height: 13rem;">
+      <img class="card-img-top img-fluid"src="${characterImage}">     
+      <div class="card-body">
+        <p class="card-text">${characterName}</p>
+      </div>
+    </div>`  
   })     
 }
 
