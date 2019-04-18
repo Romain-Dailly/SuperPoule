@@ -27,6 +27,25 @@ for (let i = 0; i < characters.length; i++) {
   };
 }
 
+// store pseudo
+let pseudo = "";
+function getPseudo() {
+  pseudo = document.getElementById("myPseudo").value;
+  document.getElementById('pseudo').innerHTML = `ready to play ${pseudo} ?`;     
+}
+
+// choose a character randomly
+let characterName = "";
+let characterImage = "";
+function GetRandomCharacter() {
+  fetch("http://easteregg.wildcodeschool.fr/api/characters/random")
+  .then(response => response.json())
+  .then(response => {
+    characterName = response.name;
+    characterImage = response.image;
+    document.getElementById('character').innerHTML = `<img src="${characterImage}"/></br>${characterName}`;     
+  })     
+}
 
 
 
