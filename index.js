@@ -45,7 +45,7 @@ function GetRandomCharacter() {
       <div class="card-body">
         <p class="card-text">${characterName}</p>
         <p class="card-text">${pseudo}</p>
-        <button>PLAY</button>
+        <a href="playGame.html"><button>PLAY</button></a>
       </div>    
     </div>
     `  
