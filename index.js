@@ -14,7 +14,7 @@ fetch("http://easteregg.wildcodeschool.fr/api/characters")
 
 /*Display characters in characters div*/
 const img = () =>{
-console.log(characters)
+// console.log(characters)
 const listOfCharacters = document.getElementById("showCharacters")
 for (let i = 0; i < characters.length; i++) {
   listOfCharacters.innerHTML += 
