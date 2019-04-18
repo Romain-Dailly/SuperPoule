@@ -1,5 +1,5 @@
 body {
-  background-color: darkcyan;
+  background-color: rgb(0, 100, 139);
   height: 100%;
   width: 100%;
 }
@@ -13,9 +13,34 @@ img{
   max-height: 100px;
   max-width: 100px;
 }
+img.hover{
+  cursor:pointer;
+}
 
 .character{
   border: 1px solid;
   margin:10px;
   padding: 10px;
+}
+
+.titleGame{
+  font-size: 100px;
+  margin-bottom: 40px;
+}
+
+#myPseudo{
+  margin-bottom: 40px;
+}
+
+#randomCharacter{
+margin-top: 40px;
+}
+
+h2{
+  margin-bottom: 30px;
+  margin-top:30px
+}
+.goOnGame{
+  margin-bottom: 30px;
+  margin-top:30px
 }
