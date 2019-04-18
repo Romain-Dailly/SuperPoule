@@ -1,13 +1,3 @@
-function pseudoChoice(x){
-  return(
-    <div>
-      <p>x</p>
-    </div>
-  );
+function myFunction() {
+  var x = document.getElementById("myText").value;
 }
-
-console.log(pseudoChoice("welcome"));
-
-// <div>
-//   URL: <input value={this.state.value} onChange={this.handleUrl} />
-// </div>
