@@ -16,13 +16,13 @@ fetch("http://easteregg.wildcodeschool.fr/api/characters")
 const img = () =>{
 console.log(characters)
 const listOfCharacters = document.getElementById("showCharacters")
-for (let i = 0; i < characters.length; i++) {
+for (let i = 0; i < 6; i++) {
   listOfCharacters.innerHTML += 
-  `<div class="${i}">
-      <div>
-        <img style="max-height:100px; max-width:100px"src="${characters[i].image}">
+  `<div class="${i} h-5">
+        <a hover="cursor:pointer"><img class="img-fluid col-2"
+        style="max-height:100px; max-width:100px"src="${characters[i].image}">
+        </a>
         <p>${characters[i].name}</p>
-      </div>
   </div>`;
   };
 }
