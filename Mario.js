@@ -7,7 +7,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
   function preload() {
     game.load.spritesheet('tiles', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/tiles_dctsfk.png', 16, 16);
     game.load.spritesheet('goomba', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/goomba_nmbtds.png', 16, 16);
-    game.load.spritesheet('mario', 'pics/poule.png',16, 16);
+    game.load.spritesheet('mario', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/mario_wjlfy5.png',16, 16);
     game.load.spritesheet('coin', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/coin_iormvy.png', 16, 16);
   
     game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);
@@ -78,7 +78,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       } else {
         player.animations.stop();
         if (player.goesRight) player.frame = 0;
-        else player.frame = 7;
+        else player.frame = 7; 
       }
   
       if (cursors.up.isDown && player.body.onFloor()) {

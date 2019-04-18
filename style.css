@@ -1,0 +1,9 @@
+.animated {
+  animation-duration: 5s;
+  animation-delay: 2s;
+  text-align: center; 
+}
+
+#pouleover{
+  text-align: center;
+}
