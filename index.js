@@ -1,6 +1,10 @@
+let characters = []; // to get ALL API Characters
+let pseudo = ""; // to Store Player Pseudo
+let characterName = ""; // to store Character Name from API
+let characterImage = ""; // to store character Image from API
+
 
 /*Get characters and map only name and picture*/
-let characters = [];
 fetch("http://easteregg.wildcodeschool.fr/api/characters")
   .then(response => response.json())
   .then(response => {
@@ -28,16 +32,8 @@ for (let i = 0; i < 6; i++) {
   };
 }
 
-// store pseudo
-let pseudo = "";
-function getPseudo() {
-  pseudo = document.getElementById("myPseudo").value;
-  document.getElementById('pseudo').innerHTML = `ready to play ${pseudo} ?`;     
-}
 
 // choose a character randomly
-let characterName = "";
-let characterImage = "";
 function GetRandomCharacter() {
   fetch("http://easteregg.wildcodeschool.fr/api/characters/random")
   .then(response => response.json())
@@ -49,11 +45,18 @@ function GetRandomCharacter() {
       <img class="card-img-top img-fluid"src="${characterImage}">     
       <div class="card-body">
         <p class="card-text">${characterName}</p>
+        <p class="card-text">${pseudo}</p>
       </div>
     </div>`  
   })     
 }
 
+// store pseudo
+function getPseudo() {
+  console.log(document.getElementById("myPseudo").value);
+  pseudo = document.getElementById("myPseudo").value;
+  document.getElementById('pseudo').innerHTML = `ready to play ${pseudo} ?`;     
+}
 
 
 
