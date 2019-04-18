@@ -28,11 +28,11 @@
           <script>
             let character = "";
             function GetRandomCharacter() {
-              fetch("http://easteregg.wildcodeschool.fr/api/characters")
+              fetch("http://easteregg.wildcodeschool.fr/api/characters/random")
               .then(response => response.json())
               .then(response => {
-                character = response[0].name;
-                image = response[0].image;
+                character = response.name;
+                image = response.image;
                 document.getElementById('demo').innerHTML = `<img src="${image}"/></br>${character}`;     
               })     
             }
