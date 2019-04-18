@@ -1,5 +1,5 @@
 let characters = []; // to get ALL API Characters
-// let pseudo = ""; // to Store Player Pseudo
+let pseudo = ""; // to Store Player Pseudo
 let characterName = ""; // to store Character Name from API
 let characterImage = ""; // to store character Image from API
 
@@ -43,8 +43,8 @@ const setCharacter = (image, name)=>{
       </div>
     </div>`  
 }
+
 // store pseudo
-let pseudo = "";
 function getPseudo() {
   pseudo = document.getElementById("myPseudo").value;
   document.getElementById('pseudo').innerHTML = `ready to play ${pseudo} ?`;     
@@ -70,12 +70,7 @@ function GetRandomCharacter() {
   })     
 }
 
-// // store pseudo
-// function getPseudo() {
-//   console.log(document.getElementById("myPseudo").value);
-//   pseudo = document.getElementById("myPseudo").value;
-//   document.getElementById('pseudo').innerHTML = `ready to play ${pseudo} ?`;     
-// }
+
 
 
 

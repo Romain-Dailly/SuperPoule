@@ -24,17 +24,31 @@
       <h2>Choisis ton personnage</h2>
       <div id="showCharacters" class="row d-flex justify-content-center align-bottom">
       </div>
-      <h2>personnage au hasard</h2>
       <button type="button" onclick="{GetRandomCharacter()}">au hasard</button>
     </div>
 
-    <div>
-      <h2>Choisis ton pseudo</h2>
-      <input type="text" id="myPseudo" placeholder="Ton Pseudo">
-      <button onclick="getPseudo()">Try it</button>
+    <!-- <div>
       <div id="character" class="d-flex justify-content-center mt-5">
       </div>
-    </div>
+    </div> -->
+
+
+     <div>
+        <h2>Choisis ton pseudo</h2>
+        <input type="text" id="myPseudo" placeholder="Ton Pseudo" onchange="getPseudo()">
+      </div>
+
+      <div class="character">
+        <h2>Choisis ton personnage</h2>
+        <div 
+          id="showCharacters" 
+          class="row d-flex justify-content-center align-bottom">
+        </div>
+        <button type="button" onclick="{GetRandomCharacter()}">au hasard</button>
+      </div>
+
+      <div id="character" class="d-flex justify-content-center mt-5">
+</div>
 
   </div>
 
