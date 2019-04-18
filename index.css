@@ -13,6 +13,9 @@ img{
   max-height: 100px;
   max-width: 100px;
 }
+img.hover{
+  cursor:pointer;
+}
 
 .character{
   border: 1px solid;
