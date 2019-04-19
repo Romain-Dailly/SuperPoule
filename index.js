@@ -21,7 +21,7 @@ const img = () =>{
 const listOfCharacters = document.getElementById("showCharacters")
 for (let i = 0; i < 6; i++) {
   listOfCharacters.innerHTML += 
-  `<a class="character-card" onclick="setCharacter('${characters[i].image}','${characters[i].name}')">
+  `<a class="character-card " onclick="setCharacter('${characters[i].image}','${characters[i].name}')">
     <div class="card mr-2" style="width: 7rem;">
       <img class="card-img-top img-fluid"src="${characters[i].image}">     
       <div class="card-body">
@@ -40,35 +40,35 @@ const setCharacter = (image, name)=> {
       <img class="card-img-top img-fluid"src="${characterImage}">     
       <div class="card-body">
         <p class="card-text">${characterName}</p>
-        <a href="./playGame.html"><button>PLAY</button></a>
       </div>
-    </div>`  
+    </div>`;
+  modal.innerHTML = `
+  <div class="card m-2 col-1.5 "onclick="{setCharacter()}" "style="width: 7rem">
+    <img class="card-img-top img-fluid"src="${characterImage}">     
+    <div class="card-body">
+      <p class="card-text">${characterName}</p>
+    </div>
+  </div>` ;   
 }
 // store pseudo
 function getPseudo() {
   pseudo = document.getElementById("myPseudo").value;
-  document.getElementById('pseudo').innerHTML = `<h2>ready to play ${pseudo} ?</h2>`;     
+  document.getElementById('Modal').innerHTML = `
+  <h2 class="mt-5">Prêt à t'éclater ${pseudo}? avec ${characterName}?</h2>
+  <br><img src="${characterImage}"class="img-modal"alt="imgmodal"><br>
+  <a href="./playGame.html"><button type="button" class="btn btn-dark btn-lg m-3">PLAY</button></a>`;     
 }
 // choose a character randomly
-function GetRandomCharacter() {
+const GetRandomCharacter=()=> {
   fetch("http://easteregg.wildcodeschool.fr/api/characters/random")
   .then(response => response.json())
   .then(response => {
     characterName = response.name;
     characterImage = response.image;
-    document.getElementById('character').innerHTML = `
-    <div class="card m-2" >
-      <img class="card-img-top img-fluid"src="${characterImage}">     
-      <div class="card-body">
-        <p class="card-text">${characterName}</p>
-      </div>    
-      <a href="./playGame.html"><button>PLAY</button></a>
-    </div>
-    `  
-  })  
-  
+    setCharacter(characterImage, characterName)
+  })     
 }
 
-
+console.log(characterName)
 
 
