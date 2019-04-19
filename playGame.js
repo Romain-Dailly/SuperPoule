@@ -10,6 +10,3 @@ const myModal = document.getElementById('modal');
 const closeButton = document.getElementById('close-modal');
 openButton.addEventListener('click',() => {myModal.style.display = "block";})
 closeButton.addEventListener('click',() => {myModal.style.display = "none";})
-
-
-
