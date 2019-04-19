@@ -1,0 +1,29 @@
+.content { 
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: rgb(0, 100, 139);
+  background: black;
+  color: greenyellow;
+  border: 1px solid #ddd;z-index: 5;
+  text-align: center;
+  position: absolute; 
+  z-index: 5;
+  margin-left: 620px !important;
+  margin-top: 190px !important;
+}
+
+.center {
+  text-align: center;
+} */
+
+button {
+  /* padding: 10px 20px; */
+  background: #F76C6C;
+  color: #fff;
+  border: transparent;
+  border-radius: 4px;
+  font-size: 1.5rem;
+}
+

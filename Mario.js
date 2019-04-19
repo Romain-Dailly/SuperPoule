@@ -130,8 +130,11 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       game.time.events.add(Phaser.Timer.SECOND * 3, function() {
       game.paused = true;
       player.kill();
+      document.getElementById('modal').className="d-block";
+    });
       document.getElementById("pouleover").className="d-block";
-      });
+      
+      
     }
   }
 
