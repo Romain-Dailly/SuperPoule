@@ -27,12 +27,10 @@
   margin-left: 620px !important;
   margin-top: 190px !important;
   font-family: 'Luckiest Guy', cursive !important;
-  
 }
 
 .center {
-  text-align: center;
-  
+  text-align: center; 
 }
 
 button {
@@ -42,4 +40,13 @@ button {
   border: transparent;
   border-radius: 4px;
   font-size: 1.5rem;
+}
+
+.youwin {
+  text-align: center;
+  position: absolute;
+  margin-left: 620px !important;
+  margin-top: 190px !important;
+  font-family: 'Luckiest Guy', cursive !important;
+  color: black;
 }

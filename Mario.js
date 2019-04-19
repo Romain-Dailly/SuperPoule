@@ -1,19 +1,31 @@
-var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
+  let game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     preload: preload,
     create: create,
     update: update
   }, false, false);
-
-  var score = 0;
-  var scoreText;
-
+  
+  let score = 0;
+  let scoreText;
+  let randomegg =
+  ['pics/oeuf_3_16x16.png',
+  'pics/oeuf_2_16x16.png',]
+  
+  let eggs = [
+    {address: '', x: 500, y:180},
+    {address: '', x: 1500, y:25},
+    {address: '', x: 1750, y:125},
+    {address: '', x: 730, y:130},
+  ]
+  
   function preload() {
+    var i = Math.floor(Math.random() * randomegg.length)
     game.load.spritesheet('tiles', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/tiles_dctsfk.png', 16, 16);
-    game.load.spritesheet('goomba', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/goomba_nmbtds.png', 16, 16);
+    game.load.spritesheet('goomba', 'pics/renard_40x34.png', 40, 17);
     game.load.spritesheet('mario', 'pics/poussin_mvt_80x97.png', 26.6, 32.3 );
     game.load.spritesheet('coin', 'pics/oeuf_1_16x17.png', 16, 16);
-    game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);
-          
+    game.load.image('egg', randomegg[i], 16, 16);
+    // game.load.image('egg', 'pics/oeuf_3_16x16.png');
+    game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);       
   }
   
   function create() {
@@ -22,7 +34,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       game.scale.pageAlignVertically = true
       game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       game.renderer.renderSession.roundPixels = true;
-
+  
     game.physics.startSystem(Phaser.Physics.ARCADE);
   
     game.stage.backgroundColor = '#ff5500';
@@ -41,6 +53,15 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     map.createFromTiles(2, null, 'coin', 'stuff', coins);
     coins.callAll('animations.add', 'animations', 'spin', [0, 0, 1, 2], 3, true);
     coins.callAll('animations.play', 'animations', 'spin');
+  
+  
+    let j = Math.floor(Math.random() * eggs.length);
+    egg = game.add.sprite(eggs[j].x, eggs[j].y, 'egg');
+  
+    game.physics.arcade.enable(egg);
+  
+    egg.enableBody = true;
+  
   
     goombas = game.add.group();
     goombas.enableBody = true;
@@ -63,13 +84,13 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     game.camera.follow(player);
   
     cursors = game.input.keyboard.createCursorKeys();
-
+  
     scoreText = game.add.text(32, 16, 'score: 0');
     scoreText.fontSize=12;
-    scoreText.anchor.set(0.5);
-    scoreText.align = 'center';
-    text.fontWeight = 'bold';
-
+    scoreText.anchor.set(-0.5);
+    scoreText.position = 'absolute';
+    coreText.align = 'left';
+    scoreText.fontWeight = 'bold';
   }
   
   function update() {
@@ -77,6 +98,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     game.physics.arcade.collide(goombas, layer);
     game.physics.arcade.overlap(player, goombas, goombaOverlap);
     game.physics.arcade.overlap(player, coins, coinOverlap);
+    game.physics.arcade.overlap(player, egg, eggOverlap);
   
     if (player.body.enable) {
       player.body.velocity.x = 0;
@@ -102,16 +124,23 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       if (player.body.velocity.y != 0) {
         if (player.goesRight) player.frame = 2;
         else player.frame = 4;
+        
       }
     }
   }
   
   function coinOverlap(player, coin) {
     coin.kill();
-       //  Add and update the score
       score += 10;
       scoreText.text = 'Score: ' + score;
   
+  }
+  
+  function eggOverlap(player, egg) {
+    console.log("test")
+    egg.kill();
+      score += 30;
+      scoreText.text = 'Score: ' + score;
   }
   
   function goombaOverlap(player, goomba) {
@@ -122,6 +151,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       player.body.velocity.y = -80;
       game.time.events.add(Phaser.Timer.SECOND, function() {
         goomba.kill();
+        
       });
     } else {
       player.frame = 6;
@@ -140,5 +170,21 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       document.getElementById('pouleover').className="d-block"; 
     }
   }
+
+  function win (score) {
+    if (score >= 40) {
+      game.time.events.add(Phaser.Timer.SECOND * 3, function() {
+        game.paused = true;
+        document.getElementById("youwin").className="d-block";
+      });
+        
+        
+
+    }else {
+      console.log("toto")
+    }
+  }
+
+  
 
   
