@@ -31,6 +31,11 @@ for (let i = 0; i < 6; i++) {
   </a>`;
   };
 }
+
+// function to transfert variables
+// function transfertVariables (myString) {
+//   window.location.href = "playGame.html" + myString;
+// }
 // function to set selected character
 const setCharacter = (image, name)=>{
   characterName = name;
@@ -52,6 +57,7 @@ const setCharacter = (image, name)=>{
     </div>
   </div>` ;   
 }
+
 // store pseudo
 function getPseudo() {
   pseudo = document.getElementById("myPseudo").value;
@@ -60,6 +66,7 @@ function getPseudo() {
   <br><img src="${characterImage}"class="img-modal"alt="imgmodal"><br>
   <a href="./playGame.html"><button type="button" class="btn btn-dark btn-lg m-3">PLAY</button></a>`;     
 }
+
 // choose a character randomly
 const GetRandomCharacter=()=> {
   fetch("http://easteregg.wildcodeschool.fr/api/characters/random")

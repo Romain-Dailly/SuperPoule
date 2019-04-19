@@ -41,6 +41,7 @@ img{
   min-width:110px;
   max-width:110px;
 }
+
 .character-card:hover {
   cursor: pointer;
 }
