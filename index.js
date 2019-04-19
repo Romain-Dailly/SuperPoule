@@ -73,8 +73,10 @@ const GetRandomCharacter=()=> {
 
 //sounds
 function JouerSon() {
-  var sound = document.getElementById("beep");
-  sound.play();
+  let sound = document.getElementById("beep");
+  let sound2= document.getElementById("zic");
+  sound.play()
+  .then(sound2.play());
 }
 
 
