@@ -47,7 +47,7 @@ const setCharacter = (image, name)=>{
 // store pseudo
 function getPseudo() {
   pseudo = document.getElementById("myPseudo").value;
-  document.getElementById('pseudo').innerHTML = `ready to play ${pseudo} ?`;     
+  document.getElementById('pseudo').innerHTML = `<h2>ready to play ${pseudo} ?</h2>`;     
 }
 // choose a character randomly
 function GetRandomCharacter() {
@@ -61,9 +61,8 @@ function GetRandomCharacter() {
       <img class="card-img-top img-fluid"src="${characterImage}">     
       <div class="card-body">
         <p class="card-text">${characterName}</p>
-        <p class="card-text">${pseudo}</p>
-        <a href="./playGame.html"><button>PLAY</button></a>
       </div>    
+      <a href="./playGame.html"><button>PLAY</button></a>
     </div>
     `  
   })     

@@ -6,9 +6,6 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
 
   var score = 0;
   var scoreText;
-  var image;
-  let poulesound;
-
 
   function preload() {
     game.load.spritesheet('tiles', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/tiles_dctsfk.png', 16, 16);
@@ -28,7 +25,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
   
-    game.stage.backgroundColor = '#5c94fc';
+    game.stage.backgroundColor = '#ff5500';
   
     map = game.add.tilemap('level');
     map.addTilesetImage('tiles', 'tiles');
@@ -67,7 +64,12 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
   
     cursors = game.input.keyboard.createCursorKeys();
 
-    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '24px' });
+    scoreText = game.add.text(32, 16, 'score: 0');
+    scoreText.fontSize=12;
+    scoreText.anchor.set(0.5);
+    scoreText.align = 'center';
+    text.fontWeight = 'bold';
+
   }
   
   function update() {
