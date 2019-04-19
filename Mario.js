@@ -12,8 +12,8 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
   function preload() {
     game.load.spritesheet('tiles', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/tiles_dctsfk.png', 16, 16);
     game.load.spritesheet('goomba', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/goomba_nmbtds.png', 16, 16);
-    game.load.spritesheet('mario', 'pics/poussin_mvt_160x194.png', 53.3, 63);
-    game.load.spritesheet('coin', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/coin_iormvy.png', 16, 16);
+    game.load.spritesheet('mario', 'pics/poussin_mvt_80x97.png', 26.6, 32.3 );
+    game.load.spritesheet('coin', 'pics/oeuf_1_16x17.png', 16, 16);
     game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);       
   }
   
@@ -52,7 +52,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     goombas.setAll('body.velocity.x', -20);
     goombas.setAll('body.gravity.y', 500);
   
-    player = game.add.sprite(32, game.world.height - 48, 'mario');
+    player = game.add.sprite(20, game.world.height - 48, 'mario');
     player.scale.setTo(0.5,0.5)
     game.physics.arcade.enable(player);
     player.body.gravity.y = 370;
@@ -96,8 +96,8 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       }
   
       if (player.body.velocity.y != 0) {
-        if (player.goesRight) player.frame = 5;
-        else player.frame = 12;
+        if (player.goesRight) player.frame = 2;
+        else player.frame = 4;
       }
     }
   }

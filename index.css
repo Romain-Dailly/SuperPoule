@@ -1,0 +1,23 @@
+body {
+  background-color: darkcyan;
+  height: 100%;
+  width: 100%;
+}
+.home{
+  text-align: center;
+  vertical-align: middle;
+}
+img{
+  max-height: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  min-width: 100px;
+}
+.card{
+  height:200px;
+  min-width:110px;
+  max-width:110px;
+}
+.character-card:hover {
+  cursor: pointer;
+}
