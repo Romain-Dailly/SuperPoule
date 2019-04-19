@@ -3,6 +3,22 @@ body {
   height: 100%;
   width: 100%;
 }
+h1{
+  margin-top: 10%;
+  font-family: 'Luckiest Guy', cursive;
+  color: blue;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  animation: h1-scale 1s ease-in-out 4 alternate;;
+}
+.yellow{
+  color:yellow;
+}
+.green{
+  color:green
+}
+.red{
+  color:red
+}
 .home{
   text-align: center;
   vertical-align: middle;
@@ -51,4 +67,12 @@ h2{
 .goOnGame{
   margin-bottom: 30px;
   margin-top:30px
+}
+@keyframes h1-scale {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(2);
+  }
 }
