@@ -71,6 +71,10 @@ const GetRandomCharacter=()=> {
   })     
 }
 
-console.log(characterName)
+//sounds
+function JouerSon() {
+  var sound = document.getElementById("beep");
+  sound.play();
+}
 
 
