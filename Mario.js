@@ -7,13 +7,13 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
   var score = 0;
   var scoreText;
 
-
   function preload() {
     game.load.spritesheet('tiles', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/tiles_dctsfk.png', 16, 16);
     game.load.spritesheet('goomba', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/goomba_nmbtds.png', 16, 16);
     game.load.spritesheet('mario', 'pics/poussin_mvt_80x97.png', 26.6, 32.3 );
     game.load.spritesheet('coin', 'pics/oeuf_1_16x17.png', 16, 16);
-    game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);       
+    game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);
+          
   }
   
   function create() {
@@ -130,8 +130,14 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       game.time.events.add(Phaser.Timer.SECOND * 3, function() {
       game.paused = true;
       player.kill();
-      document.getElementById("pouleover").className="d-block";
-      });
+      
+    });
+    game.time.events.add(Phaser.Timer.SECOND * 3, function() {
+      game.paused = true;
+      document.getElementById("modal").className="d-block";
+    });
+    
+      document.getElementById('pouleover').className="d-block"; 
     }
   }
 
