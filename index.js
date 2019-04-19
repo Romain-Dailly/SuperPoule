@@ -44,13 +44,11 @@ const setCharacter = (image, name)=>{
       </div>
     </div>`  
 }
-
 // store pseudo
 function getPseudo() {
   pseudo = document.getElementById("myPseudo").value;
   document.getElementById('pseudo').innerHTML = `ready to play ${pseudo} ?`;     
 }
-
 // choose a character randomly
 function GetRandomCharacter() {
   fetch("http://easteregg.wildcodeschool.fr/api/characters/random")
@@ -70,7 +68,6 @@ function GetRandomCharacter() {
     `  
   })     
 }
-
 
 
 
