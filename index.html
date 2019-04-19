@@ -19,6 +19,10 @@
 </head>
 
 <body>
+  <audio autoplay="false" id="beep" src="./Sons/Coq.mp3"></audio>
+  <audio loop id="zic"autoplay="false"> 
+      <source src="audio.mp3" type="audio/mp3">
+    </audio>
   <div class="home">
     <div>
       <h1 class='titleGame mb-0'>S<span class="yellow">u</span><span class="red">p</span><span class="green">e</span><span class="yellow">r</span>
@@ -30,7 +34,7 @@
       <div id="character" class="d-flex justify-content-center mt-5"></div>
       <h2>Choisis ton personnage, puis tape ton pseudo!</h2>
       <input type="text" id="myPseudo" class="mb-3 mt-1"placeholder="Ton Pseudo">
-      <button class="btn"type="button"id="openModal"data-toggle="modal" data-target="#Modal"onclick="getPseudo()">C'est bon?</button>
+      <button class="btn"type="button"id="openModal"data-toggle="modal" data-target="#Modal"onclick="getPseudo(),JouerSon()">C'est bon?</button>
       <div id="showCharacters" class="row d-flex justify-content-center align-bottom">
       <a id="randomCharacter" type="button" onclick="{GetRandomCharacter()}">
         <div class="card mr-2 random-card" style="width: 7rem;" >
