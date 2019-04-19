@@ -1,0 +1,52 @@
+.animated {
+  animation-duration: 5s;
+  animation-delay: 2s;
+  text-align: center; 
+}
+
+#pouleover{
+  text-align: center;
+  position: absolute; 
+  z-index: 3;
+  margin-left: 540px !important;
+  margin-top: 150px !important;
+}
+
+.content { 
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: rgb(0, 100, 139);
+  background: black;
+  color: greenyellow;
+  border: 1px solid #ddd;z-index: 5;
+  text-align: center;
+  position: absolute; 
+  z-index: 5;
+  margin-left: 620px !important;
+  margin-top: 190px !important;
+  font-family: 'Luckiest Guy', cursive !important;
+}
+
+.center {
+  text-align: center; 
+}
+
+button {
+  /* padding: 10px 20px; */
+  background: #F76C6C;
+  color: #fff;
+  border: transparent;
+  border-radius: 4px;
+  font-size: 1.5rem;
+}
+
+.youwin {
+  text-align: center;
+  position: absolute;
+  margin-left: 620px !important;
+  margin-top: 190px !important;
+  font-family: 'Luckiest Guy', cursive !important;
+  color: black;
+}

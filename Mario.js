@@ -124,6 +124,7 @@ function update() {
     if (player.body.velocity.y != 0) {
       if (player.goesRight) player.frame = 2;
       else player.frame = 4;
+      
     }
   }
 }
@@ -150,6 +151,7 @@ function goombaOverlap(player, goomba) {
     player.body.velocity.y = -80;
     game.time.events.add(Phaser.Timer.SECOND, function() {
       goomba.kill();
+      
     });
   } else {
     player.frame = 6;
@@ -158,7 +160,27 @@ function goombaOverlap(player, goomba) {
     game.time.events.add(Phaser.Timer.SECOND * 3, function() {
     game.paused = true;
     player.kill();
-    document.getElementById("pouleover").className="d-block";
+    
+  });
+  game.time.events.add(Phaser.Timer.SECOND * 3, function() {
+    game.paused = true;
+    document.getElementById("modal").className="d-block";
+  });
+  
+    document.getElementById('pouleover').className="d-block"; 
+  }
+}
+
+function win (score) {
+  if (score >= 40) {
+    game.time.events.add(Phaser.Timer.SECOND * 3, function() {
+      game.paused = true;
+      document.getElementById("youwin").className="d-block";
     });
+      
+      
+
+  }else {
+    console.log("toto")
   }
 }
