@@ -40,6 +40,7 @@ const setCharacter = (image, name)=>{
       <img class="card-img-top img-fluid"src="${characterImage}">     
       <div class="card-body">
         <p class="card-text">${characterName}</p>
+        <a href="./playGame.html"><button>PLAY</button></a>
       </div>
     </div>`  
 }
@@ -63,7 +64,7 @@ function GetRandomCharacter() {
       <div class="card-body">
         <p class="card-text">${characterName}</p>
         <p class="card-text">${pseudo}</p>
-        <a href="playGame.html"><button>PLAY</button></a>
+        <a href="./playGame.html"><button>PLAY</button></a>
       </div>    
     </div>
     `  

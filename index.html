@@ -20,34 +20,21 @@
 <body>
   <div class="home">
 
+    <div>
+      <h2>Choisis ton pseudo</h2>
+      <input type="text" id="myPseudo" placeholder="Ton Pseudo" onchange="getPseudo()">
+    </div>
+
     <div class="character">
       <h2>Choisis ton personnage</h2>
-      <div id="showCharacters" class="row d-flex justify-content-center align-bottom">
+      <div 
+        id="showCharacters" 
+        class="row d-flex justify-content-center align-bottom">
       </div>
       <button type="button" onclick="{GetRandomCharacter()}">au hasard</button>
     </div>
-
-    <!-- <div>
-      <div id="character" class="d-flex justify-content-center mt-5">
-      </div>
-    </div> -->
-
-
-     <div>
-        <h2>Choisis ton pseudo</h2>
-        <input type="text" id="myPseudo" placeholder="Ton Pseudo" onchange="getPseudo()">
-      </div>
-
-      <div class="character">
-        <h2>Choisis ton personnage</h2>
-        <div 
-          id="showCharacters" 
-          class="row d-flex justify-content-center align-bottom">
-        </div>
-        <button type="button" onclick="{GetRandomCharacter()}">au hasard</button>
-      </div>
-
-      <div id="character" class="d-flex justify-content-center mt-5">
+    <div id="character" class="d-flex justify-content-center mt-5">
+        <!-- <a href="./playGame.html"><button>PLAY</button></a> -->
 </div>
 
   </div>

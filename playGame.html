@@ -10,56 +10,20 @@
       <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.2/phaser.min.js' ></script>
       <!-- CSS -->
-      <link rel="stylesheet" type="text/css" href="index.css">
-      <title>SUPER POULE</title>
+      <link rel="stylesheet" type="text/css" href="./css/index.css">
+      <link rel="stylesheet" type="text/css" href="css/gameOver.css">
+      <link rel="shortcut icon" type="image/png" href="./assets/image/Chubby-run.gif"/>
+      <title>Mario</title>
     </head>
     
     <body>
-      <div class="home">
-        <div class="character">
-          <h2>Choisi ton personnage</h2>
-          <img src="https://images.innoveduc.fr/easter_hackathon/2.jpeg" />
-
-          <h2>personnage au hasard</h2>
-          <button type="button" onclick="{GetRandomCharacter()}">au hasard</button>
-          <p id="demo"></p>
-          <script>
-            let character = "";
-            let image = "";
-            function GetRandomCharacter() {
-              fetch("http://easteregg.wildcodeschool.fr/api/characters/random")
-              .then(response => response.json())
-              .then(response => {
-                character = response.name;
-                image = response.image;
-                document.getElementById('demo').innerHTML = `<img src="${image}"/></br>${character}`;     
-              })     
-            }
-          </script>
-        </div>
-
-        <div>
-          <p>Choisi ton personnage</p>
-          <p><img src="https://images.innoveduc.fr/easter_hackathon/2.jpeg" /></p>
-          <p>Choisi ton pseudo</p>
-          <input type="text" id="myText" placeholder="Ton Pseudo">
-          <button onclick="myFunction()">Try it</button>
-          <p id="demo"></p>
-        </div>
-      </div>
-
-    <!-- Optional JavaScript -->
-    <!-- <script type="text/JavaScript" src="pseudoChoice.js"></script> -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/JavaScript" src="pseudoChoice.js">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-  </body>
-
+      <!-- Optional JavaScript -->
+      <script type="text/JavaScript" src="Mario.js"></script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
 </html>
