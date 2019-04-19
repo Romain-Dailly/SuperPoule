@@ -3,14 +3,18 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     create: create,
     update: update
   }, false, false);
-  
+
+  var score = 0;
+  var scoreText;
+  var image;
+
+
   function preload() {
     game.load.spritesheet('tiles', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/tiles_dctsfk.png', 16, 16);
     game.load.spritesheet('goomba', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/goomba_nmbtds.png', 16, 16);
-    game.load.spritesheet('mario', 'pics/poule.png',16, 16);
+    game.load.spritesheet('mario', 'pics/poussin_mvt_160x194.png', 53.3, 63);
     game.load.spritesheet('coin', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/coin_iormvy.png', 16, 16);
-  
-    game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);
+    game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);       
   }
   
   function create() {
@@ -18,6 +22,8 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     game.scale.pageAlignHorizontally = true;
     game.scale.pageAlignVertically = true
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.renderer.renderSession.roundPixels = true;
+
     game.physics.startSystem(Phaser.Physics.ARCADE);
   
     game.stage.backgroundColor = '#5c94fc';
@@ -46,17 +52,20 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     goombas.setAll('body.velocity.x', -20);
     goombas.setAll('body.gravity.y', 500);
   
-    player = game.add.sprite(16, game.world.height - 48, 'mario');
+    player = game.add.sprite(32, game.world.height - 48, 'mario');
+    player.scale.setTo(0.5,0.5)
     game.physics.arcade.enable(player);
     player.body.gravity.y = 370;
     player.body.collideWorldBounds = true;
-    player.animations.add('walkRight', [1, 2, 3], 10, true);
-    player.animations.add('walkLeft', [8, 9, 10], 10, true);
+    player.animations.add('walkRight', [0, 1, 2], 10, true);
+    player.animations.add('walkLeft', [3, 4, 5], 10, true);
     player.goesRight = true;
   
     game.camera.follow(player);
   
     cursors = game.input.keyboard.createCursorKeys();
+
+    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '24px' });
   }
   
   function update() {
@@ -78,7 +87,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       } else {
         player.animations.stop();
         if (player.goesRight) player.frame = 0;
-        else player.frame = 7;
+        else player.frame = 1;
       }
   
       if (cursors.up.isDown && player.body.onFloor()) {
@@ -93,8 +102,14 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     }
   }
   
+ 
+
   function coinOverlap(player, coin) {
     coin.kill();
+       //  Add and update the score
+      score += 10;
+      scoreText.text = 'Score: ' + score;
+  
   }
   
   function goombaOverlap(player, goomba) {
@@ -111,7 +126,8 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       player.body.enable = false;
       player.animations.stop();
       game.time.events.add(Phaser.Timer.SECOND * 3, function() {
-        game.paused = true;
+      game.paused = true;
+      player.kill();
       });
     }
   }
