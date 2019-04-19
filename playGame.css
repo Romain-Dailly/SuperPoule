@@ -1,16 +1,19 @@
-.content {
-  position: absolute; 
+.content { 
   max-width: 800px;
   margin: 0 auto;
   margin-bottom: 30px;
   padding: 30px;
-  /* background: rgb(0, 100, 139); */
+  background: rgb(0, 100, 139);
   background: black;
   color: greenyellow;
-  border: 1px solid #ddd;
-  /* z-index: 5; */
+  border: 1px solid #ddd;z-index: 5;
+  text-align: center;
+  position: absolute; 
+  z-index: 5;
+  margin-left: 620px !important;
+  margin-top: 190px !important;
 }
-/* 
+
 .center {
   text-align: center;
 } */
@@ -24,16 +27,3 @@ button {
   font-size: 1.5rem;
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background: black !important; */
-  display: none;
-}
-/* 
-.modal-inner {
-  margin-top: 30px;
-} */
