@@ -14,10 +14,7 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     game.load.spritesheet('goomba', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/goomba_nmbtds.png', 16, 16);
     game.load.spritesheet('mario', 'pics/poussin_mvt_160x194.png', 53.3, 63);
     game.load.spritesheet('coin', 'https://res.cloudinary.com/harsay/image/upload/v1464614984/coin_iormvy.png', 16, 16);
-<<<<<<< HEAD
-=======
   
->>>>>>> pseudo-choice
     game.load.tilemap('level', 'https://api.myjson.com/bins/3kk2g', null, Phaser.Tilemap.TILED_JSON);       
   }
   
