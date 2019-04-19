@@ -32,7 +32,7 @@ for (let i = 0; i < 6; i++) {
   };
 }
 // function to set selected character
-const setCharacter = (image, name)=>{
+const setCharacter = (image, name)=> {
   characterName = name
   characterImage = image
   document.getElementById('character').innerHTML = `
@@ -66,7 +66,8 @@ function GetRandomCharacter() {
       </div>    
     </div>
     `  
-  })     
+  })  
+  
 }
 
 
