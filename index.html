@@ -21,18 +21,25 @@
 <body>
   <div class="home">
     <div>
-      <h1 class='titleGame'>S<span class="yellow">u</span><span class="red">p</span><span class="green">e</span><span class="yellow">r</span>
-        <br> 
-        <span class="red">P</span><span class="green">o</span><span class="yellow">u</span>l<span class="green">e</span></h1>
-      <input type="text" id="myPseudo" placeholder="Ton Pseudo" onchange="getPseudo()">
+      <h1 class='titleGame mb-0'>S<span class="yellow">u</span><span class="red">p</span><span class="green">e</span><span class="yellow">r</span>
+      <br> 
+      <span class="red">P</span><span class="green">o</span><span class="yellow">u</span>l<span class="green">e</span></h1>
     </div>
-    <div class="character">
-      <h2>Choisis ton personnage</h2>
-      <div id="showCharacters" class="row d-flex justify-content-center align-bottom"></div>
-      <button id="randomCharacter" type="button" onclick="{GetRandomCharacter()}">au hasard</button>
-      <div id="pseudo">     
+      <div class="modal fade" id="Modal" >
       </div>
       <div id="character" class="d-flex justify-content-center mt-5"></div>
+      <h2>Choisis ton personnage, puis tape ton pseudo!</h2>
+      <input type="text" id="myPseudo" class="mb-3 mt-1"placeholder="Ton Pseudo"><button class="btn"type="button"id="openModal"data-toggle="modal" data-target="#Modal"onclick="getPseudo()">C'est bon?</button>
+      <div id="showCharacters" class="row d-flex justify-content-center align-bottom">
+      <a id="randomCharacter" type="button" onclick="{GetRandomCharacter()}">
+        <div class="card mr-2 random-card" style="width: 7rem;" >
+          <img class="card-img-top img-fluid"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ycHZ7YN6-YkfivBvVJ9heMtVi2U8pFBQ5Fa8UmS4jccJ6U-r">     
+          <div class="card-body">
+            <p class="card-text">Au pif</p>
+          </div>    
+        </div>
+        </a>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
