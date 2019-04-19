@@ -102,8 +102,6 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     }
   }
   
- 
-
   function coinOverlap(player, coin) {
     coin.kill();
        //  Add and update the score
