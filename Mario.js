@@ -18,11 +18,11 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
   }
   
   function create() {
-    Phaser.Canvas.setImageRenderingCrisp(game.canvas)
-    game.scale.pageAlignHorizontally = true;
-    game.scale.pageAlignVertically = true
-    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    game.renderer.renderSession.roundPixels = true;
+      Phaser.Canvas.setImageRenderingCrisp(game.canvas)
+      game.scale.pageAlignHorizontally = true;
+      game.scale.pageAlignVertically = true
+      game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+      game.renderer.renderSession.roundPixels = true;
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
   
@@ -102,8 +102,6 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
     }
   }
   
- 
-
   function coinOverlap(player, coin) {
     coin.kill();
        //  Add and update the score
@@ -128,6 +126,9 @@ var game = new Phaser.Game(256, 240, Phaser.CANVAS, '', {
       game.time.events.add(Phaser.Timer.SECOND * 3, function() {
       game.paused = true;
       player.kill();
+      document.getElementById("pouleover").className="d-block";
       });
     }
   }
+
+  
