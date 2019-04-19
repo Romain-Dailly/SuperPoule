@@ -19,23 +19,23 @@ for (var i = 0; i < queries.length; i++)
 {
   document.write(queries[i] + "<br>");
 }
-// var playerPseudo=queries[0];
-// var playerImage=queries[1];
+var playerPseudo=queries[0];
+var playerImage=queries[1];
 // console.log(playerImage);
 // console.log(playerPseudo);
 
 //get current Url to reload with same name and image of player
 // var currentLocation = window.location;
 
-function image() {
-  var playerImage=queries[1];
-  return playerImage;
-}
-let element = document.getElementById('playerImage');
-element.innerHTML = `${image()}`;     
+// function image() {
+//   let playerImage=queries[1];
+//   return playerImage;
+// }
+// let element = document.getElementById('playerImage');
+// element.innerHTML = `<img src="${image()}" />`;     
 
 function pseudo() {
-  var playerPseudo=queries[0];
+  let playerPseudo=queries[0];
   return playerPseudo;
 }
 let element = document.getElementById('playerPseudo');
